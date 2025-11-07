@@ -1,66 +1,198 @@
-<!DOCTYPE html> <!-- Missing exclamation mark fixed -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday KUNJOO 💙</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Poppins",sans-serif;background:radial-gradient(circle at top,#071032,#000814);color:#f8f6f0;overflow-x:hidden;text-align:center;position:relative;min-height:100vh;padding-bottom:60px}
+  /* Loader */
+  #loader{position:fixed;inset:0;background:linear-gradient(180deg,#001428,#000814);display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:2em;z-index:1200;color:#f6f0e6}
+  #main{display:none;animation:fadeIn 1.6s ease-in forwards;padding:22px}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  h1{font-size:2.4em;letter-spacing:1px;color:#ffddb3;margin-top:18px;text-shadow:0 6px 24px rgba(0,0,0,0.6)}
+  p.sub{color:#dfe7ff;margin-top:6px;opacity:0.95}
+  /* Balloons */
+  .balloon-area{position:relative;height:320px;margin-top:36px;pointer-events:auto}
+  .balloon{width:72px;height:96px;border-radius:50%;position:absolute;bottom:12px;display:flex;align-items:flex-end;justify-content:center;cursor:pointer;transform-origin:50% 90%;box-shadow:0 14px 30px rgba(0,0,0,0.5);transition:transform .25s ease,opacity .3s ease}
+  .balloon::after{content:"";width:2px;height:42px;background:linear-gradient(#ffe6c7,#ffd6a6);position:absolute;bottom:-38px;left:50%;transform:translateX(-50%)}
+  .balloon.gold{background:radial-gradient(circle at 35% 25%, #ffdca8,#ffb86b)}
+  .balloon.blue{background:radial-gradient(circle at 35% 25%, #bcd3ff,#6fa8ff)}
+  @keyframes floatUp{0%{transform:translateY(0)}100%{transform:translateY(-520px);opacity:0}}
+  /* popped animation */
+  .popped{animation:none;transform:scale(1.12);opacity:0;transition:transform .45s ease,opacity .45s ease}
+  /* Popup (golden elegant) */
+  .msg-popup{position:absolute;padding:10px 16px;border-radius:10px;background:linear-gradient(180deg,rgba(255,241,209,0.98),rgba(255,229,170,0.98));color:#3b2b12;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,0.45);pointer-events:none;transform-origin:center;opacity:0;transition:opacity .25s ease,transform .25s ease}
+  .msg-popup.show{opacity:1;transform:translateY(-8px) scale(1)}
+  .msg-popup.glow{box-shadow:0 6px 30px rgba(255,196,85,0.18),0 0 30px rgba(255,196,85,0.08) inset}
+  /* Carousel */
+  .carousel{perspective:1000px;margin:28px auto;width:90%;max-width:720px;position:relative}
+  .carousel-inner{display:flex;transition:transform 1s ease}
+  .carousel img{width:100%;border-radius:14px;box-shadow:0 16px 50px rgba(0,0,0,0.6);border:2px solid rgba(255,215,150,0.06);object-fit:cover;height:360px}
+  /* Flip card */
+  .flip-card{background:transparent;width:420px;height:260px;perspective:1000px;margin:30px auto}
+  .flip-card-inner{position:relative;width:100%;height:100%;text-align:center;transition:transform 1s;transform-style:preserve-3d}
+  .flip-card:hover .flip-card-inner{transform:rotateY(180deg)}
+  .flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;border-radius:12px;backface-visibility:hidden;padding:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+  .flip-card-front{background:linear-gradient(135deg,#0b2a52,#071032);color:#fff;font-size:1.25em}
+  .flip-card-back{background:linear-gradient(135deg,#071032,#0c2f57);transform:rotateY(180deg);color:#ffe6c7;font-size:1em;line-height:1.6;text-align:left}
+  /* Hearts */
+  .heart{position:absolute;font-size:22px;color:#ffb6c1;animation:floatHeart 8s linear infinite;pointer-events:none}
+  @keyframes floatHeart{0%{transform:translateY(0) rotate(0);opacity:1}50%{transform:translateY(-160px) rotate(25deg);opacity:0.85}100%{transform:translateY(-340px) rotate(60deg);opacity:0}}
+  /* Sparkle */
+  .sparkle{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;background:radial-gradient(circle at 10% 10%,rgba(255,240,200,0.03),transparent 8%),radial-gradient(circle at 90% 80%,rgba(255,240,200,0.02),transparent 12%);mix-blend-mode:screen;animation:sparkle 1.2s linear infinite}
+  @keyframes sparkle{0%{opacity:0.25}50%{opacity:1}100%{opacity:0.25}}
+  footer{margin-top:28px;font-size:0.9em;opacity:0.95;color:#ffe8c9}
+  @media (max-width:760px){.flip-card{width:92%;height:auto}.carousel img{height:240px}h1{font-size:1.9em}}
+</style>
+</head>
+<body>
+  <div id="loader"><p>🎂 Countdown to Kunjoo’s Birthday 🎉</p><p id="countdown">5</p></div>
+  <div id="main">
+    <h1>💙 Happy Birthday, KUNJOO 💙</h1>
+    <p class="sub">From Sojimma, with endless love 💫</p>
+
+    <div style="margin-top:14px">
+      <iframe src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v" width="340" height="80" frameborder="0" allow="encrypted-media" style="border-radius:8px"></iframe>
+    </div>
+
+    <div class="balloon-area" id="balloonArea"></div>
+
+    <div class="carousel">
+      <div class="carousel-inner" id="carouselInner">
+        <img src="SRC_HERE_1" alt="photo1" />
+        <img src="SRC_HERE_2" alt="photo2" />
+        <img src="SRC_HERE_3" alt="photo3" />
+        <img src="SRC_HERE_4" alt="photo4" />
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">💌 Open for Message 💌</div>
+        <div class="flip-card-back">
+          To the woman who makes my heart skip a beat with every smile,<br><br>
+          Happy Birthday! You are the love of my life, and I'm grateful for every moment we spend together.<br><br>
+          May this year be filled with even more love and happiness. May God bless you and fulfill all your dreams.<br><br>
+          <strong>💖 – CS Gerlin Mary Sam</strong><br>💞 From Sojimma
+        </div>
+      </div>
+    </div>
+
+    <footer>© 2025 With Love, Sojimma 💙</footer>
+  </div>
+
+  <div class="sparkle"></div>
 
 <script>
-  // Countdown
-  const countdown = document.getElementById("countdown");
-  const loader = document.getElementById("loader");
-  const main = document.getElementById("main");
-
-  let count = 5;
-  const interval = setInterval(() => {
-    countdown.textContent = count;
-    count--;
-    if (count < 0) {
-      clearInterval(interval);
-      loader.style.display = "none";
-      main.style.display = "block";
-    }
-  }, 1000);
-
-  // Balloons
-  const balloonContainer = document.getElementById("balloonContainer");
-  const popup = document.getElementById("popup");
-  const popupText = document.getElementById("popupText");
-  const words = ["Love", "Happiness", "Joy", "Dreams", "Forever", "Smile", "You"];
-
-  for (let i = 0; i < words.length; i++) {
-    const b = document.createElement("div");
-    b.classList.add("balloon");
-    b.style.left = Math.random() * 90 + "%";
-    b.style.animationDuration = (5 + Math.random() * 3) + "s";
-    b.addEventListener("click", () => {
-      popup.style.display = "flex";
-      popupText.textContent = words[i];
-      setTimeout(() => popup.style.display = "none", 1500);
-    });
-    balloonContainer.appendChild(b);
+// Countdown logic (5 seconds)
+const countdownEl = document.getElementById('countdown');
+const loader = document.getElementById('loader');
+const main = document.getElementById('main');
+let count = 5;
+countdownEl.textContent = count;
+const interval = setInterval(function(){
+  count--;
+  countdownEl.textContent = count;
+  if(count < 0){
+    clearInterval(interval);
+    loader.style.display = 'none';
+    main.style.display = 'block';
+    startAnimations();
   }
+},1000);
 
-  // Carousel auto slide (template string fix)
-  const carousel = document.getElementById("carouselInner");
-  let index = 0;
-  setInterval(() => {
-    index = (index + 1) % 7;
-    carousel.style.transform = `translateX(-${index * 100}%)`;
-  }, 2500);
+function startAnimations(){ /* reserved for later if needed */ }
 
-  // Create floating hearts (template string fix)
-  function createHearts() {
-    const heart = document.createElement('span');
-    heart.classList.add('heart');
-    heart.textContent = '❤';
-    heart.style.left = `${Math.random() * 100}%`;
-    heart.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random float time
-    document.body.appendChild(heart);
+// Balloon messages and positions
+const balloonData = [
+  {cls:'gold', msg:'You are my cutiepie', left:'12%'},
+  {cls:'blue', msg:'You make me smile', left:'35%'},
+  {cls:'gold', msg:'My heart belongs to you', left:'60%'},
+  {cls:'blue', msg:'Forever my love', left:'81%'}
+];
 
-    // Remove heart after animation
-    setTimeout(() => heart.remove(), 8000);
-  }
+const area = document.getElementById('balloonArea');
 
-  setInterval(createHearts, 500);
+// Create a floating balloon element
+balloonData.forEach(function(b, idx){
+  const el = document.createElement('div');
+  el.className = 'balloon ' + b.cls;
+  el.style.left = b.left;
+  // randomize float duration and delay
+  const dur = 7 + Math.random()*4;
+  el.style.animation = 'floatUp ' + dur + 's linear infinite';
+  el.style.animationDelay = (Math.random()*3) + 's';
+  // click handler -> pop
+  el.addEventListener('click', function(ev){
+    popBalloon(el, b.msg);
+  });
+  area.appendChild(el);
+});
 
-  // Sparkles effect (subtle background effect)
-  const sparkle = document.createElement('div');
-  sparkle.classList.add('sparkle');
-  document.body.appendChild(sparkle);
+// Popup element (single, will be positioned above popped balloon)
+const popup = document.createElement('div');
+popup.className = 'msg-popup glow';
+document.body.appendChild(popup);
+
+function popBalloon(balloonEl, message){
+  // get balloon rect to position popup
+  const rect = balloonEl.getBoundingClientRect();
+  const popupWidth = 240;
+  // set popup text
+  popup.textContent = message;
+  // compute center above balloon
+  const left = rect.left + rect.width/2 - popupWidth/2;
+  const top = rect.top - 14 - 56; // a bit above balloon top
+  popup.style.width = popupWidth + 'px';
+  popup.style.left = Math.max(12, left) + 'px';
+  popup.style.top = Math.max(12, top) + 'px';
+  // show popup
+  popup.classList.add('show');
+  // animate balloon pop
+  balloonEl.classList.add('popped');
+  // create small burst effect (golden ring)
+  const burst = document.createElement('div');
+  burst.style.position='absolute';
+  burst.style.left = (rect.left + rect.width/2 - 40) + 'px';
+  burst.style.top = (rect.top + rect.height/2 - 40) + 'px';
+  burst.style.width='80px'; burst.style.height='80px';
+  burst.style.borderRadius='50%';
+  burst.style.border='3px solid rgba(255,196,85,0.25)';
+  burst.style.boxShadow='0 0 30px rgba(255,196,85,0.12)';
+  burst.style.transition='transform .6s ease,opacity .6s ease';
+  burst.style.transform='scale(0.6)';
+  document.body.appendChild(burst);
+  setTimeout(function(){ burst.style.transform='scale(1.6)'; burst.style.opacity='0'; },20);
+  setTimeout(function(){ burst.remove(); },700);
+  // remove balloon after animation
+  setTimeout(function(){ balloonEl.remove(); },480);
+  // hide popup after short delay
+  setTimeout(function(){ popup.classList.remove('show'); },1300);
+}
+
+// Carousel auto slide
+const carousel = document.getElementById('carouselInner');
+let cIndex = 0;
+setInterval(function(){
+  cIndex = (cIndex + 1) % 4;
+  carousel.style.transform = 'translateX(-' + (cIndex*100) + '%)';
+},3500);
+
+// floating hearts
+function createHearts(){
+  const h = document.createElement('span');
+  h.className='heart';
+  h.textContent='❤';
+  h.style.left = Math.random()*100 + '%';
+  h.style.top = (50 + Math.random()*40) + 'vh';
+  h.style.opacity=1;
+  document.body.appendChild(h);
+  setTimeout(function(){ h.remove(); },8000);
+}
+setInterval(createHearts,900);
 </script>
+</body>
+</html>
