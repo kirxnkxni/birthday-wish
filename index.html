@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!-- Missing exclamation mark fixed -->
+
+<script>
+  // Countdown
+  const countdown = document.getElementById("countdown");
+  const loader = document.getElementById("loader");
+  const main = document.getElementById("main");
+
+  let count = 5;
+  const interval = setInterval(() => {
+    countdown.textContent = count;
+    count--;
+    if (count < 0) {
+      clearInterval(interval);
+      loader.style.display = "none";
+      main.style.display = "block";
+    }
+  }, 1000);
+
+  // Balloons
+  const balloonContainer = document.getElementById("balloonContainer");
+  const popup = document.getElementById("popup");
+  const popupText = document.getElementById("popupText");
+  const words = ["Love", "Happiness", "Joy", "Dreams", "Forever", "Smile", "You"];
+
+  for (let i = 0; i < words.length; i++) {
+    const b = document.createElement("div");
+    b.classList.add("balloon");
+    b.style.left = Math.random() * 90 + "%";
+    b.style.animationDuration = (5 + Math.random() * 3) + "s";
+    b.addEventListener("click", () => {
+      popup.style.display = "flex";
+      popupText.textContent = words[i];
+      setTimeout(() => popup.style.display = "none", 1500);
+    });
+    balloonContainer.appendChild(b);
+  }
+
+  // Carousel auto slide (template string fix)
+  const carousel = document.getElementById("carouselInner");
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % 7;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }, 2500);
+
+  // Create floating hearts (template string fix)
+  function createHearts() {
+    const heart = document.createElement('span');
+    heart.classList.add('heart');
+    heart.textContent = '❤';
+    heart.style.left = `${Math.random() * 100}%`;
+    heart.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random float time
+    document.body.appendChild(heart);
+
+    // Remove heart after animation
+    setTimeout(() => heart.remove(), 8000);
+  }
+
+  setInterval(createHearts, 500);
+
+  // Sparkles effect (subtle background effect)
+  const sparkle = document.createElement('div');
+  sparkle.classList.add('sparkle');
+  document.body.appendChild(sparkle);
+</script>
